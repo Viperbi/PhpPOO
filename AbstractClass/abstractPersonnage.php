@@ -1,0 +1,53 @@
+<?php
+
+abstract class AbstractPersonnage{
+    //Attribut
+    private ?string $nom;
+    private ?InterfaceArme $arme;
+    private ?string $type;
+
+
+    public function __construct(string $nom, InterfaceArme $arme, string $type){
+        $this->nom = $nom;
+        $this->type = $type;
+        $this->arme = $arme;
+    }
+
+    public function getNom(): string{
+        return $this->nom;
+    }
+    public function getArme(): InterfaceArme{
+        return $this->arme;
+    }
+    public function getType(): string{
+        return $this->type;
+    }
+    public function setNom(string $nom): AbstractPersonnage{
+        $this->nom = $nom;
+        return $this;
+    }
+    public function setArme(InterfaceArme $arme): AbstractPersonnage{
+        $this->arme = $arme;
+        return $this;
+    }
+    public function setType(string $type): AbstractPersonnage{
+        $this->type = $type;
+        return $this;
+    }
+
+    public abstract function afficher():void;
+
+    public function attaquer():void{
+        $temp = $this->getArme();
+        if (gettype($temp)=="ProjectileMagique"){
+            if ($this->getType() == "Magicien"){
+                $this->attaquer();
+            }else{
+                echo "Vous ne savez pas vous servir d'un baton magique en tant que". $this->getType();
+                return;
+            }
+        }else{
+            $temp->attaquer();
+        }
+    }
+}

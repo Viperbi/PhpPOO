@@ -19,7 +19,7 @@ $voiture -> boost();
 echo '<p> La nouvelle vitess de la '. $voiture->getNom() . ' est de '. $voiture->getVitesseMax();
 
 if (gettype(($voiture->plusRapide($moto)) ==  'Vehicule')){
-    echo '<p> Le véhicule le plus rapide est la'. $voiture->plusRapide($moto)->getNom();
+    echo '<p> Le véhicule le plus rapide est la '. $voiture->plusRapide($moto)->getNom();
 }
 else {
     echo '<p>'. $voiture->plusRapide($moto);
