@@ -1,15 +1,17 @@
 <?php
 class Maison{
     //Attribut
-    private ?string $nom;
-    private ?string $longueur;
-    private ?string $largeur;
+    private string $nom;
+    private string $longueur;
+    private string $largeur;
+    private ?int $etage;
 
 
-    public function __construct(?string $nom, ?string $longueur, ?string $largeur){
+    public function __construct(string $nom, string $longueur, string $largeur, ?int $etage){
         $this->nom = $nom;
         $this->longueur = $longueur;
         $this->largeur = $largeur;
+        $this->etage = $etage;
     }
 
     public function getNom(): ?string{
@@ -22,6 +24,10 @@ class Maison{
 
     public function getLargeur(): ?string{
         return $this->largeur;
+    }
+
+    public function getEtage(): ?int{
+        return $this->etage;
     }
 
     public function setNom(string $nom): Maison{
@@ -39,7 +45,16 @@ class Maison{
         return $this;
     }
 
-    public function surface(int $long, int $larg): int{
-        return $long*$larg;
+    public function setEtage(?int $etage): Maison{
+        $this->etage = $etage;
+        return $this;
     }
+
+    public function surface(int $long, int $larg, ?int $etage): int{
+        if ($this->etage = 0){
+            return $long*$larg;
+        }
+        return $long*$larg*$etage;
+    }
+
 }
