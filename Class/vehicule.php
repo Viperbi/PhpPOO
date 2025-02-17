@@ -5,11 +5,13 @@ class Vehicule{
     private ?string $couleur;
     private ?string $proprietaire;
     private ?int $vitesseMax = 250;
+    private ?string $nom;
 
     //Constructeur
     //De base, PHP possède déjà une méthode magique qui s'appelle __construc(), et servant à instancier des objets sans donner de valeur à leur attribut
     //Je peux cependant redéfinir le comportement du constructeur au sein d'un classe
-    public function __construct(?int $nbrRoue, string $couleur = "Noire"){
+    public function __construct(?string $nom,?int $nbrRoue, string $couleur = "Noire"){
+        $this->nom = $nom;
         $this->nbrRoue = $nbrRoue;
         $this->couleur = $couleur;
     }
@@ -31,6 +33,10 @@ class Vehicule{
         return $this->vitesseMax;
     }
 
+    public function getNom():string{
+        return $this->nom;
+    }
+
     public function setNbrRoue(?int $newNbrRoue):Vehicule{
         $this->nbrRoue = $newNbrRoue;
         return $this;
@@ -46,9 +52,37 @@ class Vehicule{
         return $this;
     }
 
+    public function setNom(?string $nom):Vehicule{
+        $this->nom = $nom;
+        return $this;
+    }
+
     //METHODE
     public function accelerer(?int $newVitesse):void{
         $this->setVitesseMax(($this->getVitesseMax() + $newVitesse));
         echo '<br>Je file maintenant à '.$this->getVitesseMax().' km/h !';
     }
+
+    public function detect(): string{
+        if($this -> nbrRoue ==2){
+            return "Moto";
+        }
+        return "Voiture";
+    }
+
+    public function boost(): Vehicule{
+        $this -> vitesseMax += 50;
+        return $this;
+    }
+
+    public function plusRapide(Vehicule $v1): Vehicule|string{
+        if ($v1 < $this) {
+            return $this;
+        }
+        elseif ($this < $v1) {
+            return $v1;
+        }
+        return "Les véhicule ont la même vitesse";
+    }
+
 }
