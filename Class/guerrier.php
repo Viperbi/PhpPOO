@@ -2,6 +2,6 @@
 class Guerrier extends AbstractPersonnage {
 
     public function afficher():void{
-        echo 'Je suis un guerrier';
+        echo '<p>Je suis un guerrier';
     }
 }

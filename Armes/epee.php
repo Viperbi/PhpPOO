@@ -30,12 +30,12 @@ class Epee implements InterfaceArme{
         if (rand(0,100)<= 10){
             $this->durability -=1;
             if($this->durability == 0){
-                echo 'Votre arme vient de se briser';
+                echo '<p>Votre arme vient de se briser';
             }
         }
         return $temp;
         }
-        echo "Votre arme est brisé vous ne pouvez pas attaquer";
+        echo "<p>Votre arme est brisé vous ne pouvez pas attaquer";
         return 0;
     }
 }

@@ -30,11 +30,11 @@ class Arc implements InterfaceArme{
             $temp = rand(3,7);
             $this->munition -=1;
             if($this->munition == 0){
-                echo 'Vous venez de tirer votre dernière flèche';
+                echo '<p>Vous venez de tirer votre dernière flèche';
             }
         return $temp;
         }
-        echo "Vous êtes à court de flèches, essayez de lancer votre arc pour vous défendre !";
+        echo "<p>Vous êtes à court de flèches, essayez de lancer votre arc pour vous défendre !";
         return 0;
     }
 }

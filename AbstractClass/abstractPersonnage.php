@@ -39,15 +39,15 @@ abstract class AbstractPersonnage{
 
     public function attaquer():void{
         $temp = $this->getArme();
-        if (gettype($temp)=="ProjectileMagique"){
+        if ($temp->getType() =="ProjectileMagique"){
             if ($this->getType() == "Magicien"){
-                $this->attaquer();
+                echo 'Tu fais '. $this->attaquer(). 'avec ton baton';
             }else{
-                echo "Vous ne savez pas vous servir d'un baton magique en tant que". $this->getType();
-                return;
+                echo "<p>Vous ne savez pas vous servir d'un baton magique en tant que ". $this->getType();
             }
         }else{
             $temp->attaquer();
+            echo '<p>Tu attaques avec ton '. $this->getArme()->getType() . ' et tu fais ' . $temp->attaquer(). ' points de dégats.';
         }
     }
 }

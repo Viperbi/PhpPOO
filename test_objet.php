@@ -2,6 +2,14 @@
 
 include './Class/maison.php';
 include './Class/vehicule.php';
+include './Interfaces/interfaceArme.php';
+include './Armes/arc.php';
+include './Armes/epee.php';
+include './Armes/projectileMagique.php';
+include './AbstractClass/abstractPersonnage.php';
+include './Class/voleur.php';
+include './Class/guerrier.php';
+include './Class/magicien.php';
 
 $home = new Maison('La Casa Pietra',250,300, 2);
 
@@ -24,3 +32,13 @@ if (gettype(($voiture->plusRapide($moto)) ==  'Vehicule')){
 else {
     echo '<p>'. $voiture->plusRapide($moto);
 }
+
+$voleur = new Voleur('Lupin',new Arc(),'Voleur');
+$guerrier = new Guerrier('Atila',new Epee,'Guerrier');
+$magicien = new Magicien('Merlin',new ProjectileMagique(),'Magicien');
+$guerrierNul = new Guerrier('Etila',new ProjectileMagique(),'Guerrier');
+
+$voleur->attaquer();
+$guerrier->attaquer();
+$magicien->attaquer();
+$guerrierNul->attaquer();
