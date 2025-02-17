@@ -2,12 +2,12 @@
 class Maison{
     //Attribut
     private string $nom;
-    private string $longueur;
-    private string $largeur;
+    private int $longueur;
+    private int $largeur;
     private ?int $etage;
 
 
-    public function __construct(string $nom, string $longueur, string $largeur, ?int $etage){
+    public function __construct(string $nom, int $longueur, int $largeur, ?int $etage){
         $this->nom = $nom;
         $this->longueur = $longueur;
         $this->largeur = $largeur;
@@ -18,11 +18,11 @@ class Maison{
         return $this->nom;
     }
 
-    public function getLongueur(): ?string{
+    public function getLongueur(): int{
         return $this->longueur;
     }
 
-    public function getLargeur(): ?string{
+    public function getLargeur(): int{
         return $this->largeur;
     }
 
@@ -35,12 +35,12 @@ class Maison{
         return $this;
     }
 
-    public function setLongueur(string $longueur): Maison{
+    public function setLongueur(int $longueur): Maison{
         $this->longueur = $longueur;
         return $this;
     }
 
-    public function setLargeur(string $largeur): Maison{
+    public function setLargeur(int $largeur): Maison{
         $this->largeur = $largeur;
         return $this;
     }
@@ -50,11 +50,13 @@ class Maison{
         return $this;
     }
 
-    public function surface(int $long, int $larg, ?int $etage): int{
-        if ($this->etage = 0){
-            return $long*$larg;
+    public function surface(): int{
+        if ($this->etage == 0){
+
+            return $this->getLongueur()*$this->getLargeur();
         }
-        return $long*$larg*$etage;
+
+        return $this->getLongueur()*$this->getLargeur()*$this->getEtage();
     }
 
 }
