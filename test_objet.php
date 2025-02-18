@@ -38,6 +38,7 @@ $guerrier = new Guerrier('Atila',new Epee,'Guerrier');
 $magicien = new Magicien('Merlin',new ProjectileMagique(),'Magicien');
 $guerrierNul = new Guerrier('Etila',new ProjectileMagique(),'Guerrier');
 
+
 $voleur->attaquer();
 $guerrier->attaquer();
 $magicien->attaquer();

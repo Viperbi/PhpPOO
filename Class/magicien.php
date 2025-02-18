@@ -12,5 +12,6 @@ class Magicien extends AbstractPersonnage {
         if ($this->mana == 0){
             echo '<p>Vous avez utilisé tout votre pouvoir, vous tomber inconscient';
         }
+        echo '<p>Tu attaque avec ton '.$this->getArme()->getType(). ' et fais ' . $this->getArme()->attaquer() . ' points de dégats.';
     }
 }
