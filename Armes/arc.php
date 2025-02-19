@@ -1,35 +1,35 @@
 <?php
-class Bow implements interfaceWeapon{
-    private int $munition;
+class Bow implements InterfaceWeapon{
+    private int $ammo;
     private string $type;
     public function __construct(){
-        $this->munition = 5;
+        $this->ammo = 5;
         $this->type = "Bow";
     }
 
-    public function getMunition(): int{
-        return $this->munition;
+    public function getAmmo(): int{
+        return $this->ammo;
     }
     public function getType(): string{
         return $this->type;
     }
-    public function setMunition(int $munition): Bow{
-        $this->munition = $munition;
+    public function setAmmo(int $ammo): Bow{
+        $this->ammo = $ammo;
         return $this;
     }
     public function setType(string $type): Bow{
         $this->type = $type;
         return $this;
     }
-    public function afficher():void{
+    public function display():void{
         echo "<p>Je suis un Bow</p>";
     }
 
-    public function attaquer(): int{
-        if($this->munition>0){
+    public function attack(): int{
+        if($this->ammo>0){
             $temp = rand(3,7);
-            $this->munition -=1;
-            if($this->munition == 0){
+            $this->ammo -=1;
+            if($this->ammo == 0){
                 echo '<p>Vous venez de tirer votre dernière flèche';
             }
         return $temp;

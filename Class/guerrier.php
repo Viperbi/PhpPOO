@@ -1,7 +1,7 @@
 <?php
-class Guerrier extends AbstractPersonnage {
+class Guerrier extends AbstractCharacter {
 
-    public function afficher():void{
+    public function display():void{
         echo '<p>Je suis un guerrier';
     }
 }

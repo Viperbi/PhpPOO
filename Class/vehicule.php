@@ -33,7 +33,7 @@ class Vehicule{
         return $this->vitesseMax;
     }
 
-    public function getname():string{
+    public function getName():string{
         return $this->name;
     }
 
@@ -52,7 +52,7 @@ class Vehicule{
         return $this;
     }
 
-    public function setname(?string $name):Vehicule{
+    public function setName(?string $name):Vehicule{
         $this->name = $name;
         return $this;
     }

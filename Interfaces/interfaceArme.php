@@ -1,5 +1,5 @@
 <?php
-interface interfaceWeapon {
-    public function afficher():void;
-    public function attaquer():int;
+interface InterfaceWeapon {
+    public function display():void;
+    public function attack():int;
 }

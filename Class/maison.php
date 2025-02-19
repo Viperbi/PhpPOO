@@ -14,7 +14,7 @@ class Maison{
         $this->etage = $etage;
     }
 
-    public function getname(): ?string{
+    public function getName(): ?string{
         return $this->name;
     }
 
@@ -30,7 +30,7 @@ class Maison{
         return $this->etage;
     }
 
-    public function setname(string $name): Maison{
+    public function setName(string $name): Maison{
         $this->name = $name;
         return $this;
     }
