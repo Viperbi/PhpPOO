@@ -5,12 +5,13 @@ abstract class AbstractPersonnage{
     private ?string $nom;
     private ?InterfaceArme $arme;
     private ?string $type;
+    private Stats $stats;
 
-
-    public function __construct(string $nom, InterfaceArme $arme, string $type){
+    public function __construct(string $nom, InterfaceArme $arme, string $type, Stats $stats){
         $this->nom = $nom;
         $this->type = $type;
         $this->arme = $arme;
+        $this->stats = $stats;
     }
 
     public function getNom(): string{
@@ -48,4 +49,7 @@ abstract class AbstractPersonnage{
             echo '<p>Tu attaques avec ton '. $this->getArme()->getType() . ' et tu fais ' . $temp->attaquer(). ' points de dégats.';
         }
     }
+
+    public function getStats(): Stats { return $this->stats; }
+    public function setStats(Stats $stats): self { $this->stats = $stats; return $this; }
 }
