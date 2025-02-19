@@ -41,7 +41,7 @@ abstract class AbstractCharacter{
     public function attack():void{
         $temp = $this->getWeapon();
         if ($temp->getType() === "SpellBook"){
-            if ($this->getType() != 'Magicien'){
+            if ($this->getType() != 'Mage'){
                 echo "<p>Vous ne savez pas vous servir d'un baton magique en tant que ". $this->getType(). '.';
             }          
             }else{

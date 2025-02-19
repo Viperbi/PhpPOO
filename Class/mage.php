@@ -1,9 +1,9 @@
 <?php
-class Magicien extends AbstractCharacter {
+class Mage extends AbstractCharacter {
 
     private int $mana =  10;
     public function display():void{
-        echo '<p>Je suis un magicien';
+        echo '<p>Je suis un Mage';
     }
 
     public function attack(): void{
