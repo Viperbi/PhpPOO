@@ -1,10 +1,10 @@
 <?php
-class Arc implements InterfaceArme{
+class Bow implements interfaceWeapon{
     private int $munition;
     private string $type;
     public function __construct(){
         $this->munition = 5;
-        $this->type = "Arc";
+        $this->type = "Bow";
     }
 
     public function getMunition(): int{
@@ -13,16 +13,16 @@ class Arc implements InterfaceArme{
     public function getType(): string{
         return $this->type;
     }
-    public function setMunition(int $munition): Arc{
+    public function setMunition(int $munition): Bow{
         $this->munition = $munition;
         return $this;
     }
-    public function setType(string $type): Arc{
+    public function setType(string $type): Bow{
         $this->type = $type;
         return $this;
     }
     public function afficher():void{
-        echo "<p>Je suis un arc</p>";
+        echo "<p>Je suis un Bow</p>";
     }
 
     public function attaquer(): int{
@@ -34,7 +34,7 @@ class Arc implements InterfaceArme{
             }
         return $temp;
         }
-        echo "<p>Vous êtes à court de flèches, essayez de lancer votre arc pour vous défendre !";
+        echo "<p>Vous êtes à court de flèches, essayez de lancer votre Bow pour vous défendre !";
         return 0;
     }
 }

@@ -8,10 +8,10 @@ class Magicien extends AbstractPersonnage {
 
     public function attaquer(): void{
         $this->mana -=1;
-        $this->getArme()->attaquer();
+        $this->getweapon()->attaquer();
         if ($this->mana == 0){
             echo '<p>Vous avez utilisé tout votre pouvoir, vous tomber inconscient';
         }
-        echo '<p>Tu attaque avec ton '.$this->getArme()->getType(). ' et fais ' . $this->getArme()->attaquer() . ' points de dégats.';
+        echo '<p>Tu attaque avec ton '.$this->getweapon()->getType(). ' et fais ' . $this->getweapon()->attaquer() . ' points de dégats.';
     }
 }

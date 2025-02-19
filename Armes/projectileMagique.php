@@ -1,7 +1,8 @@
 <?php
-class ProjectileMagique implements InterfaceArme{
-    private string $type = "ProjectileMagique";
+class ProjectileMagique implements interfaceWeapon{
+    private string $type;
     public function __construct(){
+        $this->type = "ProjectileMagique";
     }
     public function getType(): string{
         return $this->type;
