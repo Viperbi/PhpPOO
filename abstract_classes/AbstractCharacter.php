@@ -2,9 +2,9 @@
 
 abstract class AbstractCharacter{
     //Attribut
-    private ?string $name;
+    private string $name;
     private ?InterfaceWeapon $weapon;
-    private ?string $type;
+    private string $type;
     private Stats $stats;
 
     public function __construct(string $name, InterfaceWeapon $weapon, string $type, Stats $stats){
@@ -23,16 +23,23 @@ abstract class AbstractCharacter{
     public function getType(): string{
         return $this->type;
     }
-    public function setName(string $name): AbstractCharacter{
+    public function getStats(): Stats{
+        return $this->stats;
+    }
+    public function setName(string $name): self{
         $this->name = $name;
         return $this;
     }
-    public function setWeapon(InterfaceWeapon $weapon): AbstractCharacter{
+    public function setWeapon(InterfaceWeapon $weapon): self{
         $this->weapon = $weapon;
         return $this;
     }
-    public function setType(string $type): AbstractCharacter{
+    public function setType(string $type): self{
         $this->type = $type;
+        return $this;
+    }
+    public function setStats(Stats $stats): self{
+        $this->stats = $stats;
         return $this;
     }
 
@@ -49,7 +56,4 @@ abstract class AbstractCharacter{
             echo '<p>Tu attaques avec ton '. $this->getWeapon()->getType() . ' et tu fais ' . $temp->attack(). ' points de dégats.';
         }
     }
-
-    public function getStats(): Stats { return $this->stats; }
-    public function setStats(Stats $stats): self { $this->stats = $stats; return $this; }
 }

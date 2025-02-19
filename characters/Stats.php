@@ -1,30 +1,41 @@
 <?php
 
 class Stats{
+    private int $hp;
     private int $strength;
     private int $agility;
     private int $intelligence;
 
+    //C'est quoi ça ?
     private int $test;
 
-    public function __construct(int $strength, int $agility, int $intelligence) {
+    public function __construct(int $hp,int $strength, int $agility, int $intelligence) {
+        $this->hp = $hp;
         $this->strength = $strength;
         $this->agility = $agility;
         $this->intelligence = $intelligence;
     }
     
-    public function getstrength(): int {
+    public function getHp(): int {
+        return $this->hp;
+    }
+    public function setHp(int $hp): self{
+        $this->hp = $hp;
+        return $this;
+    }
+
+    public function getStrength(): int {
         return $this->strength;
     }
-    public function setstrength(int $strength): self {
+    public function setStrength(int $strength): self {
         $this->strength = $strength;
         return $this;
     }
 
-    public function getagility(): int {
+    public function getAgility(): int {
         return $this->agility;
     }
-    public function setagility(int $agility): self {
+    public function setAgility(int $agility): self {
         $this->agility = $agility;
         return $this;
     }
