@@ -1,31 +1,31 @@
 <?php
 
 class Stats{
-    private int $force;
-    private int $agilite;
+    private int $strength;
+    private int $agility;
     private int $intelligence;
 
     private int $test;
 
-    public function __construct(int $force, int $agilite, int $intelligence) {
-        $this->force = $force;
-        $this->agilite = $agilite;
+    public function __construct(int $strength, int $agility, int $intelligence) {
+        $this->strength = $strength;
+        $this->agility = $agility;
         $this->intelligence = $intelligence;
     }
     
-    public function getForce(): int {
-        return $this->force;
+    public function getstrength(): int {
+        return $this->strength;
     }
-    public function setForce(int $force): self {
-        $this->force = $force;
+    public function setstrength(int $strength): self {
+        $this->strength = $strength;
         return $this;
     }
 
-    public function getAgilite(): int {
-        return $this->agilite;
+    public function getagility(): int {
+        return $this->agility;
     }
-    public function setAgilite(int $agilite): self {
-        $this->agilite = $agilite;
+    public function setagility(int $agility): self {
+        $this->agility = $agility;
         return $this;
     }
 

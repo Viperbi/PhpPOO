@@ -5,4 +5,10 @@ abstract class AbstractItem{
     private ?string $name;
     private string $nbUse;
 
+    public function __construct(string $name, string $nbUse){
+        
+    }
+
+    public abstract function display(): void;
+    
 }
