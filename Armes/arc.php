@@ -1,40 +1,40 @@
 <?php
-class Arc implements InterfaceArme{
-    private int $munition;
+class Bow implements InterfaceWeapon{
+    private int $ammo;
     private string $type;
     public function __construct(){
-        $this->munition = 5;
-        $this->type = "Arc";
+        $this->ammo = 5;
+        $this->type = "Bow";
     }
 
-    public function getMunition(): int{
-        return $this->munition;
+    public function getAmmo(): int{
+        return $this->ammo;
     }
     public function getType(): string{
         return $this->type;
     }
-    public function setMunition(int $munition): Arc{
-        $this->munition = $munition;
+    public function setAmmo(int $ammo): Bow{
+        $this->ammo = $ammo;
         return $this;
     }
-    public function setType(string $type): Arc{
+    public function setType(string $type): Bow{
         $this->type = $type;
         return $this;
     }
-    public function afficher():void{
-        echo "<p>Je suis un arc</p>";
+    public function display():void{
+        echo "<p>Je suis un Bow</p>";
     }
 
-    public function attaquer(): int{
-        if($this->munition>0){
+    public function attack(): int{
+        if($this->ammo>0){
             $temp = rand(3,7);
-            $this->munition -=1;
-            if($this->munition == 0){
+            $this->ammo -=1;
+            if($this->ammo == 0){
                 echo '<p>Vous venez de tirer votre dernière flèche';
             }
         return $temp;
         }
-        echo "<p>Vous êtes à court de flèches, essayez de lancer votre arc pour vous défendre !";
+        echo "<p>Vous êtes à court de flèches, essayez de lancer votre Bow pour vous défendre !";
         return 0;
     }
 }

@@ -5,13 +5,13 @@ class Vehicule{
     private ?string $couleur;
     private ?string $proprietaire;
     private ?int $vitesseMax = 250;
-    private ?string $nom;
+    private ?string $name;
 
     //Constructeur
     //De base, PHP possède déjà une méthode magique qui s'appelle __construc(), et servant à instancier des objets sans donner de valeur à leur attribut
     //Je peux cependant redéfinir le comportement du constructeur au sein d'un classe
-    public function __construct(?string $nom,?int $nbrRoue, string $couleur = "Noire"){
-        $this->nom = $nom;
+    public function __construct(?string $name,?int $nbrRoue, string $couleur = "Noire"){
+        $this->name = $name;
         $this->nbrRoue = $nbrRoue;
         $this->couleur = $couleur;
     }
@@ -33,8 +33,8 @@ class Vehicule{
         return $this->vitesseMax;
     }
 
-    public function getNom():string{
-        return $this->nom;
+    public function getName():string{
+        return $this->name;
     }
 
     public function setNbrRoue(?int $newNbrRoue):Vehicule{
@@ -52,8 +52,8 @@ class Vehicule{
         return $this;
     }
 
-    public function setNom(?string $nom):Vehicule{
-        $this->nom = $nom;
+    public function setName(?string $name):Vehicule{
+        $this->name = $name;
         return $this;
     }
 

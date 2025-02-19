@@ -1,52 +1,52 @@
 <?php
 
-abstract class AbstractPersonnage{
+abstract class AbstractCharacter{
     //Attribut
-    private ?string $nom;
-    private ?InterfaceArme $arme;
+    private ?string $name;
+    private ?InterfaceWeapon $weapon;
     private ?string $type;
     private Stats $stats;
 
-    public function __construct(string $nom, InterfaceArme $arme, string $type, Stats $stats){
-        $this->nom = $nom;
+    public function __construct(string $name, InterfaceWeapon $weapon, string $type, Stats $stats){
+        $this->name = $name;
         $this->type = $type;
-        $this->arme = $arme;
+        $this->weapon = $weapon;
         $this->stats = $stats;
     }
 
-    public function getNom(): string{
-        return $this->nom;
+    public function getName(): string{
+        return $this->name;
     }
-    public function getArme(): InterfaceArme{
-        return $this->arme;
+    public function getWeapon(): InterfaceWeapon{
+        return $this->weapon;
     }
     public function getType(): string{
         return $this->type;
     }
-    public function setNom(string $nom): AbstractPersonnage{
-        $this->nom = $nom;
+    public function setName(string $name): AbstractCharacter{
+        $this->name = $name;
         return $this;
     }
-    public function setArme(InterfaceArme $arme): AbstractPersonnage{
-        $this->arme = $arme;
+    public function setWeapon(InterfaceWeapon $weapon): AbstractCharacter{
+        $this->weapon = $weapon;
         return $this;
     }
-    public function setType(string $type): AbstractPersonnage{
+    public function setType(string $type): AbstractCharacter{
         $this->type = $type;
         return $this;
     }
 
-    public abstract function afficher():void;
+    public abstract function display():void;
 
-    public function attaquer():void{
-        $temp = $this->getArme();
-        if ($temp->getType() === "ProjectileMagique"){
+    public function attack():void{
+        $temp = $this->getWeapon();
+        if ($temp->getType() === "SpellBook"){
             if ($this->getType() != 'Magicien'){
                 echo "<p>Vous ne savez pas vous servir d'un baton magique en tant que ". $this->getType(). '.';
             }          
             }else{
-            $temp->attaquer();
-            echo '<p>Tu attaques avec ton '. $this->getArme()->getType() . ' et tu fais ' . $temp->attaquer(). ' points de dégats.';
+            $temp->attack();
+            echo '<p>Tu attaques avec ton '. $this->getWeapon()->getType() . ' et tu fais ' . $temp->attack(). ' points de dégats.';
         }
     }
 

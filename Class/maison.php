@@ -1,21 +1,21 @@
 <?php
 class Maison{
     //Attribut
-    private string $nom;
+    private string $name;
     private int $longueur;
     private int $largeur;
     private ?int $etage;
 
 
-    public function __construct(string $nom, int $longueur, int $largeur, ?int $etage){
-        $this->nom = $nom;
+    public function __construct(string $name, int $longueur, int $largeur, ?int $etage){
+        $this->name = $name;
         $this->longueur = $longueur;
         $this->largeur = $largeur;
         $this->etage = $etage;
     }
 
-    public function getNom(): ?string{
-        return $this->nom;
+    public function getName(): ?string{
+        return $this->name;
     }
 
     public function getLongueur(): int{
@@ -30,8 +30,8 @@ class Maison{
         return $this->etage;
     }
 
-    public function setNom(string $nom): Maison{
-        $this->nom = $nom;
+    public function setName(string $name): Maison{
+        $this->name = $name;
         return $this;
     }
 
